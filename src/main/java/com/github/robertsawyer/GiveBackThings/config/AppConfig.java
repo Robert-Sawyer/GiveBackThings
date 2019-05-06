@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.github.robertsawyer.OddajRzeczy")
+@ComponentScan(basePackages = "com.github.robertsawyer.GiveBackThings")
 public class AppConfig {
 
     @Bean
