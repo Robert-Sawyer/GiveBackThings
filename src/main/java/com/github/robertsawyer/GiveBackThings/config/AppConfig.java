@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleContextResolver;
@@ -24,19 +26,24 @@ import java.util.Locale;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan(basePackages = "com.github.robertsawyer.GiveBackThings") 
+@ComponentScan(basePackages = "com.github.robertsawyer.GiveBackThings")
 @EnableJpaRepositories(basePackages = "com.github.robertsawyer.GiveBackThings.domain.repositories")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public LocalEntityManagerFactoryBean entityManagerFactory() {
         LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
-        emfb.setPersistenceUnitName("giveBackThingsPersistenceUnit");
+        emfb.setPersistenceUnitName("givebackPersistenceUnit");
         return emfb; }
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager tm = new JpaTransactionManager(emf);
         return tm; }
+
+    @Bean
+    PasswordEncoder getEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public ViewResolver viewResolver() {
