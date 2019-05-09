@@ -4,23 +4,29 @@ import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.domain.repositories.UserRepository;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
+@Component
 public class UserService {
 
+    @Autowired
     private UserRepository userRepository;
 
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
+
 
     public UserDTO findUser(String login) {
         if (login == null) {
