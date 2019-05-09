@@ -4,6 +4,7 @@ import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 import com.github.robertsawyer.GiveBackThings.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,7 @@ import java.security.Principal;
 @RequestMapping("/register")
 public class RegistrationController {
 
+    @Autowired
     private UserService userService;
 
     public RegistrationController(UserService userService) {
@@ -32,7 +34,7 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public String register(@Valid @ModelAttribute("register") RegistrationFormDTO formDTO, BindingResult result, Principal principal){
+    public String register(@Valid @ModelAttribute("registrationForm") RegistrationFormDTO formDTO, BindingResult result, Principal principal){
         if(result.hasErrors()){
             return "home/register";
         }
