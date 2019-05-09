@@ -1,5 +1,6 @@
 package com.github.robertsawyer.GiveBackThings.config;
 
+import com.github.robertsawyer.GiveBackThings.filter.AuthFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -26,6 +27,11 @@ public class AppInitializer implements WebApplicationInitializer {
         fr.setInitParameter("encoding", "UTF-8");
         fr.setInitParameter("forceEncoding", "true");
         fr.addMappingForUrlPatterns(null, true, "/*");
+
+
+        AuthFilter authFilter = new AuthFilter();
+        container.addFilter("authFilter", authFilter). addMappingForUrlPatterns(null, false, "/giveBackThings", "/organizeCollection", "/logout");
+        //użytkownik niezalogowany nie ma miec dostępu do powyższych adresów
 
     }
 }
