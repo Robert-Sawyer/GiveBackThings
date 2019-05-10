@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Logowanie</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../../media/css/style.css" />
 </head>
 <body>
 <header>
@@ -25,11 +25,11 @@
         </ul>
 
         <ul>
-            <li><a href="#">Start</a></li>
+            <li><a href="/home">Start</a></li>
             <li><a href="#">O co chodzi?</a></li>
             <li><a href="#">O nas</a></li>
             <li><a href="#">Fundacje i organizacje</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="/contact">Kontakt</a></li>
         </ul>
     </nav>
 </header>

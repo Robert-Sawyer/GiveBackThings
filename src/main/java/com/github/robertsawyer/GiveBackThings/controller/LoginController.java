@@ -2,6 +2,7 @@ package com.github.robertsawyer.GiveBackThings.controller;
 
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.domain.repositories.UserRepository;
+import com.github.robertsawyer.GiveBackThings.dtos.LoginFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 import com.github.robertsawyer.GiveBackThings.services.UserService;
 import org.springframework.stereotype.Controller;
@@ -36,22 +37,18 @@ public class LoginController {
     }
 
     @PostMapping
-    public String login(@Valid UserDTO user, BindingResult result, HttpSession session){
+    public String login(@Valid @ModelAttribute("user") LoginFormDTO user, BindingResult result, HttpSession session){
         if(result.hasErrors()){
             return "home/login";
         }
-        User existingUser = userRepository.findFirstByEmailAndPassword(user.getEmail(), user.getPassword());
+        User existingUser = userService.findExistingUser(user);
         if (existingUser == null) {
             result.addError(new FieldError("user", "email", "Email or password is incorrect"));
             return "home/login";
         }
-//        User existingUser = userService.checkIfUserExists(userDTO);
-//        if (existingUser == null) {
-//            result.addError(new FieldError("user", "email", "Email lub hasło niepoprawne"));
-//            return "home/login";
-//        }
+
         session.setAttribute("userId", existingUser);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 }

@@ -39,7 +39,7 @@ public class RegistrationController {
             return "home/register";
         }
         if(!checkPasswordEquality(formDTO)){
-            result.rejectValue("pasword", null, "Hasło i powtórzone hasło nie mogą się różnić");
+            result.rejectValue("password", null, "Hasło i powtórzone hasło nie mogą się różnić");
             return "home/register";
         }
         if(!checkLoginAvailable(formDTO)){
@@ -47,7 +47,7 @@ public class RegistrationController {
             return "home/register";
         }
         userService.registerUser(formDTO);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     private boolean checkLoginAvailable(RegistrationFormDTO formDTO) {

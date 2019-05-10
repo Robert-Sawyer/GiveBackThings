@@ -2,9 +2,11 @@ package com.github.robertsawyer.GiveBackThings.services;
 
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.domain.repositories.UserRepository;
+import com.github.robertsawyer.GiveBackThings.dtos.LoginFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -46,6 +48,14 @@ public class UserService {
         User user = Converters.convertToUser(formDTO);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
+    }
+
+    public User findExistingUser(LoginFormDTO loginUser) {
+        User user = userRepository.findByEmail(loginUser.getEmail());
+        if (!BCrypt.checkpw(loginUser.getPassword(), user.getPassword())) {
+            return null;
+        }
+        return user;
     }
 
 }
