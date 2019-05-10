@@ -50,8 +50,8 @@
             </h1>
 
             <ul class="slogan--buttons">
-                <li><a href="#" class="btn btn--large">Oddaj rzeczy</a></li>
-                <li><a href="#" class="btn btn--large">Zorganizuj zbiórkę</a></li>
+                <li><a href="/giveBackThings" class="btn btn--large">Oddaj rzeczy</a></li>
+                <li><a href="/organizeCollection" class="btn btn--large">Zorganizuj zbiórkę</a></li>
             </ul>
         </div>
     </div>

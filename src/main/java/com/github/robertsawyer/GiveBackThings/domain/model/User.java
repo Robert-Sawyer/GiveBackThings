@@ -28,6 +28,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column
+    private Role role;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,5 +43,9 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, login);
+    }
+
+    public enum Role{
+        USER, ADMIN
     }
 }

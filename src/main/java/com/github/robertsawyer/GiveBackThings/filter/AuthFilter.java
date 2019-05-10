@@ -1,5 +1,7 @@
 package com.github.robertsawyer.GiveBackThings.filter;
 
+import com.github.robertsawyer.GiveBackThings.domain.model.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -15,9 +17,9 @@ public class AuthFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
         HttpSession session = ((HttpServletRequest) req).getSession();
-        Long userId = (Long) session.getAttribute("userId");
-        if (userId == null) {
-            ((HttpServletResponse) resp).sendError(HttpServletResponse.SC_FORBIDDEN, "You are not authorized");
+        User user = (User) session.getAttribute("userId");
+        if (user == null) {
+            ((HttpServletResponse) resp).sendRedirect("/login");
         } else {
             chain.doFilter(req, resp);
         }

@@ -43,14 +43,14 @@ public class LoginController {
         User existingUser = userRepository.findFirstByEmailAndPassword(user.getEmail(), user.getPassword());
         if (existingUser == null) {
             result.addError(new FieldError("user", "email", "Email or password is incorrect"));
-            return "user/login";
+            return "home/login";
         }
 //        User existingUser = userService.checkIfUserExists(userDTO);
 //        if (existingUser == null) {
 //            result.addError(new FieldError("user", "email", "Email lub hasło niepoprawne"));
 //            return "home/login";
 //        }
-        session.setAttribute("userId", existingUser.getId());
+        session.setAttribute("userId", existingUser);
         return "redirect:/";
     }
 

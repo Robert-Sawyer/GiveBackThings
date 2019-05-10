@@ -30,7 +30,7 @@ public class AppInitializer implements WebApplicationInitializer {
 
 
         AuthFilter authFilter = new AuthFilter();
-        container.addFilter("authFilter", authFilter). addMappingForUrlPatterns(null, false, "/giveBackThings", "/organizeCollection", "/logout");
+        container.addFilter("authFilter", authFilter). addMappingForUrlPatterns(null, false, "/giveAwayThings", "/organizeCollection", "/logout");
         //użytkownik niezalogowany nie ma miec dostępu do powyższych adresów
 
     }
