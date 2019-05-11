@@ -19,6 +19,7 @@ public class Converters {
         user.setPassword(formDTO.getPassword());
         user.setFirstName(formDTO.getFirstName());
         user.setLastName(formDTO.getLastName());
+        user.setRole("USER");
         return user;
     }
 

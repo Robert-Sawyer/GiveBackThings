@@ -3,6 +3,8 @@ package com.github.robertsawyer.GiveBackThings.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -29,7 +31,7 @@ public class User {
     private String password;
 
     @Column
-    private Role role;
+    private String role;
 
     @Override
     public boolean equals(Object o) {
@@ -45,7 +47,5 @@ public class User {
         return Objects.hash(id, login);
     }
 
-    public enum Role{
-        USER, ADMIN
-    }
+
 }
