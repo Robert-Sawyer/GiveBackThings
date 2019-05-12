@@ -7,6 +7,8 @@
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -56,9 +58,9 @@
 </header>
 
 <div class="sidenav">
-    <a href='<c:url value="#" />'>Kokpit</a>
-    <a href='<c:url value="#" />'>Plany</a>
-    <a href='<c:url value="#" />'>Miejsca</a>
+    <a href='<c:url value="/userDashboard" />'>Kokpit</a>
+    <a href='<c:url value="/listOfMyGifts" />'>Moje dary</a>
+    <a href='<c:url value="/listOfMyCollections" />'>Moje zbiórki</a>
     <a href="#">Edytuj dane</a>
     <a href='<c:url value="/logout"/>'>Wyloguj</a>
 </div>
@@ -68,19 +70,19 @@
             <div class="menu-item border-dashed">
                 <a href="/places/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">DODAJ NOWE MIEJSCE</span>
+                    <span class="title">ODDAJ RZECZY</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
                 <a href="/travel-plan/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">DODAJ NOWY PLAN</span>
+                    <span class="title">ZORGANIZUJ ZBIÓRKĘ</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
                 <a href="/places/listAllPlaces">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">DODAJ MIEJSCE DO PLANU</span>
+                    <span class="title">MOŻE COŚ JESZCZE...</span>
                 </a>
             </div>
         </div>
