@@ -58,9 +58,10 @@
 </header>
 
 <div class="sidenav">
-    <a href='<c:url value="#" />'>Kokpit</a>
-    <a href='<c:url value="#" />'>Plany</a>
-    <a href='<c:url value="#" />'>Miejsca</a>
+    <a href='<c:url value="/adminDashboard" />'>Kokpit</a>
+    <a href='<c:url value="/adminsList" />'>Administratorzy</a>
+    <a href='<c:url value="/userList" />'>Użytkownicy</a>
+    <a href='<c:url value="/trustedInstitutions" />'>Zaufane instytucje</a>
     <a href="#">Edytuj dane</a>
     <a href='<c:url value="/logout"/>'>Wyloguj</a>
 </div>
@@ -70,19 +71,19 @@
             <div class="menu-item border-dashed">
                 <a href="/places/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">DODAJ NOWE MIEJSCE</span>
+                    <span class="title">ODDAJ RZECZY</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
                 <a href="/travel-plan/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">DODAJ NOWY PLAN</span>
+                    <span class="title">ZORGANIZUJ ZBIÓRKĘ</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
                 <a href="/places/listAllPlaces">
                     <i class="far fa-plus-square icon-plus-square"></i>
-                    <span class="title">DODAJ MIEJSCE DO PLANU</span>
+                    <span class="title">MOŻE COŚ JESZCZE</span>
                 </a>
             </div>
         </div>
