@@ -59,8 +59,8 @@
 
 <div class="sidenav">
     <a href='<c:url value="/adminDashboard" />'>Kokpit</a>
-    <a href='<c:url value="/adminList" />'>Administratorzy</a>
-    <a href='<c:url value="/userList" />'>Użytkownicy</a>
+    <a href='<c:url value="/adminsList" />'>Administratorzy</a>
+    <a href='<c:url value="/usersList" />'>Użytkownicy</a>
     <a href='<c:url value="/trustedInstitutions" />'>Zaufane instytucje</a>
     <a href="#">Edytuj dane</a>
     <a href='<c:url value="/logout"/>'>Wyloguj</a>
@@ -98,18 +98,25 @@
                                 </form>
                             </td>
                             <td>
-                                <form:form modelAttribute="addPlaceToPlan" method="post">
-                                    <select name="planId">
-                                        <c:forEach items="${plans}" var="plan">
-                                            <c:if test="${!plan.places.contains(place)}">
-                                                <option value="${plan.id}">${plan.name}</option>
-                                            </c:if>
-                                        </c:forEach>
-                                        <input type="hidden" value="${place.id}" name="placeId"/>
-                                        <input type="submit" value="Usuń admina" name="addToPlan"/>
-                                    </select>
+                                <form:form modelAttribute="deleteAdmin" method="post">
+                                    <input type="hidden" value="${admin
+                                    .id}" name="userId">
+                                    <input type="submit" value="Usuń admina" name="delete">
                                 </form:form>
                             </td>
+<%--                            <td>--%>
+<%--                                <form:form modelAttribute="addPlaceToPlan" method="post">--%>
+<%--                                    <select name="planId">--%>
+<%--                                        <c:forEach items="${plans}" var="plan">--%>
+<%--                                            <c:if test="${!plan.places.contains(place)}">--%>
+<%--                                                <option value="${plan.id}">${plan.name}</option>--%>
+<%--                                            </c:if>--%>
+<%--                                        </c:forEach>--%>
+<%--                                        <input type="hidden" value="${place.id}" name="placeId"/>--%>
+<%--                                        <input type="submit" value="Usuń admina" name="addToPlan"/>--%>
+<%--                                    </select>--%>
+<%--                                </form:form>--%>
+<%--                            </td>--%>
                         </tr>
                     </table>
                 </li>

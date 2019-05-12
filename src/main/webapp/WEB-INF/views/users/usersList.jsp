@@ -103,22 +103,23 @@
                             </td>
                             <td>
                                 <form:form modelAttribute="deleteUser" method="post">
-                                    <input type="submit" value="Usuń użytkownika">
+                                    <input type="hidden" value="${user.id}" name="userId">
+                                    <input type="submit" value="Usuń użytkownika" name="delete">
                                 </form:form>
                             </td>
-                            <td>
-                                <form:form modelAttribute="addPlaceToPlan" method="post">
-                                    <select name="planId">
-                                        <c:forEach items="${plans}" var="plan">
-                                            <c:if test="${!plan.places.contains(place)}">
-                                                <option value="${plan.id}">${plan.name}</option>
-                                            </c:if>
-                                        </c:forEach>
-                                        <input type="hidden" value="${place.id}" name="placeId"/>
-                                        <input type="submit" value="Usuń admina" name="addToPlan"/>
-                                    </select>
-                                </form:form>
-                            </td>
+<%--                            <td>--%>
+<%--                                <form:form modelAttribute="addPlaceToPlan" method="post">--%>
+<%--                                    <select name="planId">--%>
+<%--                                        <c:forEach items="${plans}" var="plan">--%>
+<%--                                            <c:if test="${!plan.places.contains(place)}">--%>
+<%--                                                <option value="${plan.id}">${plan.name}</option>--%>
+<%--                                            </c:if>--%>
+<%--                                        </c:forEach>--%>
+<%--                                        <input type="hidden" value="${place.id}" name="placeId"/>--%>
+<%--                                        <input type="submit" value="Usuń admina" name="addToPlan"/>--%>
+<%--                                    </select>--%>
+<%--                                </form:form>--%>
+<%--                            </td>--%>
                         </tr>
                     </table>
                 </li>
