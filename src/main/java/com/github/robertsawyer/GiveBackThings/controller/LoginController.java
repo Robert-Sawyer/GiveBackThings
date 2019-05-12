@@ -1,9 +1,7 @@
 package com.github.robertsawyer.GiveBackThings.controller;
 
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
-import com.github.robertsawyer.GiveBackThings.domain.repositories.UserRepository;
 import com.github.robertsawyer.GiveBackThings.dtos.LoginFormDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 import com.github.robertsawyer.GiveBackThings.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +21,9 @@ public class LoginController {
 
     private UserService userService;
 
-    private UserRepository userRepository;
 
-    public LoginController(UserService userService, UserRepository userRepository) {
+    public LoginController(UserService userService) {
         this.userService = userService;
-        this.userRepository = userRepository;
     }
 
     @GetMapping
