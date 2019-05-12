@@ -1,9 +1,12 @@
 package com.github.robertsawyer.GiveBackThings.controller;
 
+import com.github.robertsawyer.GiveBackThings.dtos.DeleteUserDTO;
 import com.github.robertsawyer.GiveBackThings.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
@@ -23,6 +26,12 @@ public class UserController {
     public String showUsersList(Model model){
         model.addAttribute("users", userService.getAllUser());
         return "users/usersList";
+    }
+
+    @PostMapping(value = "/usersList", params = "delete")
+    public String deleteUser(@ModelAttribute("deleteUser") DeleteUserDTO deleteUserDTO){
+        userService.deleteUser(deleteUserDTO);
+        return "redirect:/usersList";
     }
 
 }
