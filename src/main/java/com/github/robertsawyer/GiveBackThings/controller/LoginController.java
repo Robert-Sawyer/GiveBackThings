@@ -31,14 +31,14 @@ public class LoginController {
     }
 
     @GetMapping
-    public String showLoginPage(Model model){
+    public String showLoginPage(Model model) {
         model.addAttribute("user", new User());
         return "home/login";
     }
 
     @PostMapping
-    public String login(@Valid @ModelAttribute("user") LoginFormDTO user, BindingResult result, HttpSession session){
-        if(result.hasErrors()){
+    public String login(@Valid @ModelAttribute("user") LoginFormDTO user, BindingResult result, HttpSession session) {
+        if (result.hasErrors()) {
             return "home/login";
         }
         User existingUser = userService.findExistingUser(user);
@@ -48,7 +48,12 @@ public class LoginController {
         }
 
         session.setAttribute("userId", existingUser);
-        return "redirect:/home";
+
+        if (userService.checkIfRoleIsAdmin(user)) {
+            return "redirect:/adminDashboard";
+        }
+        return "redirect:/userDashboard";
     }
+
 
 }

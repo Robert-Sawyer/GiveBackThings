@@ -58,4 +58,11 @@ public class UserService {
         return user;
     }
 
+    public boolean checkIfRoleIsAdmin(LoginFormDTO loginFormDTO) {
+        User user = userRepository.findByEmail(loginFormDTO.getEmail());
+        if (user.getRole().equals("ADMIN")){
+            return true;
+        }
+        return false;
+    }
 }
