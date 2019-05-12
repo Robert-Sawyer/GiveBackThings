@@ -20,9 +20,12 @@
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,600,700&amp;subset=latin-ext"
           rel="stylesheet">
-    <link rel="stylesheet" href="../../../media/css/style.css">
+    <link rel="stylesheet" href="<c:url value="../../../media/css/style.css"/>" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<%--    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">--%>
+<%--    <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>--%>
+<%--    <script src="<c:url value="/resources/js/main.js" />"></script>--%>
 
 </head>
 <body>
