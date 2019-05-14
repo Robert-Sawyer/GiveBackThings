@@ -11,4 +11,8 @@ public class TrustedInstitution {
     private Long id;
     @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
+    private String localization;
+    @Column(nullable = false)
+    private String purpose;
 }
