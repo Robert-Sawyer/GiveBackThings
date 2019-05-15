@@ -72,8 +72,8 @@
     </div>
 
     <div class="addAdminForm">
-        <form method="get" action="/places/add">
-            <p style="color: white; font-size: 22px;">Dodaj nową zaufaną instytucję: <input type="submit" value="Dodaj"></p>
+        <form method="get" action="/institution/add">
+            <p style="color: black; font-size: 22px;">Dodaj nową zaufaną instytucję: <input type="submit" value="Dodaj"></p>
         </form>
     </div>
     <div class="adminsList">
