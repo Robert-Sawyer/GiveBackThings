@@ -77,7 +77,7 @@
             Nazwa instytucji: <form:input path="name"/><br>
             Lokalizacja:
             <select name="loc">
-                <c:forEach items="${localization}" var="loc">
+                <c:forEach items="${localizations}" var="loc">
                     <option>${loc.localization}</option>
                 </c:forEach>
             </select><br>

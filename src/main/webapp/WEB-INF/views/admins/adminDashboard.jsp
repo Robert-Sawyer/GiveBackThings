@@ -71,13 +71,13 @@
     <div class="dashboard-header m-4">
         <div class="dashboard-menu">
             <div class="menu-item border-dashed">
-                <a href="/places/add">
+                <a href="/gifts/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
                     <span class="title">ODDAJ RZECZY</span>
                 </a>
             </div>
             <div class="menu-item border-dashed">
-                <a href="/travel-plan/add">
+                <a href="/collection/organize">
                     <i class="far fa-plus-square icon-plus-square"></i>
                     <span class="title">ZORGANIZUJ ZBIÓRKĘ</span>
                 </a>

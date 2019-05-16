@@ -36,7 +36,7 @@ public class TrustedInstitutionController {
     @GetMapping("/institution/add")
     public String showAddInstitutionForm(Model model){
         model.addAttribute("newInstitution", new AddInstitutionDTO());
-        model.addAttribute("localization", trustedInstitutionService.getLocalization());
+        model.addAttribute("localizations", trustedInstitutionService.getLocalization());
         model.addAttribute("purposes", trustedInstitutionService.getAllPurposes());
         return "trustedInstitutions/addNewTrustedInstitution";
     }
