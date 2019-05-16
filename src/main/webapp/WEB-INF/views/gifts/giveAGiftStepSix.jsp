@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: robert
-  Date: 09.05.19
-  Time: 12:24
+  Date: 16.05.19
+  Time: 09:51
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Przekaż dar. Krok 3</title>
+    <title>Przekaż dar. Krok 6</title>
 </head>
 <body>
 <header class="header--form-page">
@@ -97,73 +97,57 @@
         <div class="form--steps-counter">Krok <span>1</span>/5</div>
 
         <form>
-            <!-- STEP 3 -->
-            <div data-step="3">
-                <h3>Lokalizacja:</h3>
+            <!-- STEP 6 -->
+            <div data-step="6">
+                <h3>Podsumowanie Twojej darowizny</h3>
 
-                <div class="form-group form-group--dropdown">
-                    <select name="localization">
-                        <option value="0">- wybierz -</option>
-                        <option value="warsaw">Warszawa</option>
-                        <option value="wroclaw">Wrocław</option>
-                        <option value="poznan">Poznań</option>
-                        <option value="gdansk">Gdańsk</option>
-                    </select>
-                </div>
+                <div class="summary">
+                    <div class="form-section">
+                        <h4>Oddajesz:</h4>
+                        <ul>
+                            <li>
+                                <span class="icon icon-bag"></span>
+                                <span class="summary--text"
+                                >4 worki ubrań w dobrym stanie dla dzieci</span
+                                >
+                            </li>
 
-                <div class="form-section">
-                    <h4>Komu chcesz pomóc?</h4>
-                    <div class="form-section--checkboxes">
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="children" />
-                                <span class="checkbox">dzieciom</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="mothers" />
-                                <span class="checkbox">samotnym matkom</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="homeless" />
-                                <span class="checkbox">bezdomnym</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="disabled" />
-                                <span class="checkbox">niepełnosprawnym</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="old" />
-                                <span class="checkbox">osobom starszym</span>
-                            </label>
-                        </div>
+                            <li>
+                                <span class="icon icon-hand"></span>
+                                <span class="summary--text"
+                                >Dla fundacji "Mam marzenie" w Warszawie</span
+                                >
+                            </li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="form-section">
-                    <h4>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h4>
-                    <div class="form-group">
-                        <textarea rows="4" name="organization_search"></textarea>
+                    <div class="form-section form-section--columns">
+                        <div class="form-section--column">
+                            <h4>Adres odbioru:</h4>
+                            <ul>
+                                <li>Prosta 51</li>
+                                <li>Warszawa</li>
+                                <li>99-098</li>
+                                <li>123 456 789</li>
+                            </ul>
+                        </div>
+
+                        <div class="form-section--column">
+                            <h4>Termin odbioru:</h4>
+                            <ul>
+                                <li>13/12/2018</li>
+                                <li>15:40</li>
+                                <li>Brak uwag</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Szukaj</button>
+                    <button type="submit" class="btn">Potwierdzam</button>
                 </div>
             </div>
-
         </form>
     </div>
 </section>

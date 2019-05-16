@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: robert
-  Date: 09.05.19
-  Time: 12:24
+  Date: 16.05.19
+  Time: 09:51
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Przekaż dar. Krok 3</title>
+    <title>Przekaż dar. Krok 4</title>
 </head>
 <body>
 <header class="header--form-page">
@@ -97,72 +97,44 @@
         <div class="form--steps-counter">Krok <span>1</span>/5</div>
 
         <form>
-            <!-- STEP 3 -->
-            <div data-step="3">
-                <h3>Lokalizacja:</h3>
+            <!-- STEP 4 -->
+            <div data-step="4">
+                <h3>Wybierz organizacje, której chcesz pomóc:</h3>
 
-                <div class="form-group form-group--dropdown">
-                    <select name="localization">
-                        <option value="0">- wybierz -</option>
-                        <option value="warsaw">Warszawa</option>
-                        <option value="wroclaw">Wrocław</option>
-                        <option value="poznan">Poznań</option>
-                        <option value="gdansk">Gdańsk</option>
-                    </select>
+                <div class="form-group form-group--checkbox">
+                    <label>
+                        <input type="radio" name="organization" value="old" />
+                        <span class="checkbox radio"></span>
+                        <span class="description">
+                  <div class="title">Fundacja “Bez domu”</div>
+                  <div class="subtitle">
+                    Cel i misja: Pomoc dla osób nie posiadających miejsca
+                    zamieszkania
+                  </div>
+                </span>
+                    </label>
                 </div>
 
-                <div class="form-section">
-                    <h4>Komu chcesz pomóc?</h4>
-                    <div class="form-section--checkboxes">
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="children" />
-                                <span class="checkbox">dzieciom</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="mothers" />
-                                <span class="checkbox">samotnym matkom</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="homeless" />
-                                <span class="checkbox">bezdomnym</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="disabled" />
-                                <span class="checkbox">niepełnosprawnym</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="help[]" value="old" />
-                                <span class="checkbox">osobom starszym</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h4>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h4>
-                    <div class="form-group">
-                        <textarea rows="4" name="organization_search"></textarea>
-                    </div>
+                <div class="form-group form-group--checkbox">
+                    <label>
+                        <input type="radio" name="organization" value="old" />
+                        <span class="checkbox radio"></span>
+                        <span class="description">
+                  <div class="title">Fundacja “Dla dzieci"</div>
+                  <div class="subtitle">
+                    Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji
+                    życiowej.
+                  </div>
+                </span>
+                    </label>
                 </div>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Szukaj</button>
+                    <button type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
+
 
         </form>
     </div>
