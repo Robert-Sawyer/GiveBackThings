@@ -1,6 +1,7 @@
 package com.github.robertsawyer.GiveBackThings.controller;
 
 import com.github.robertsawyer.GiveBackThings.dtos.AddGiftStepOneDTO;
+import com.github.robertsawyer.GiveBackThings.dtos.AddGiftStepTwoDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,11 +32,19 @@ public class GiftController {
 
 
     @GetMapping("/gifts/add/stepTwo")
-    public String showAddGiftFormStepTwo(){
-
+    public String showAddGiftFormStepTwo(Model model){
+        model.addAttribute("stepTwo", new AddGiftStepTwoDTO());
         return "gifts/giveAGiftStepTwo";
     }
 
+    @PostMapping("/gifts/add/stepTwo")
+    public String goToStepThree(@Valid @ModelAttribute("stepTwo") AddGiftStepTwoDTO addGiftStepTwoDTO, BindingResult result){
+        if (result.hasErrors()){
+            return "gifts/giveAGiftStepTwo";
+        }
+
+        return "redirect:/gifts/add/stepThree";
+    }
 
     @GetMapping("/gifts/add/stepThree")
     public String showAddGiftFormStepThree(){

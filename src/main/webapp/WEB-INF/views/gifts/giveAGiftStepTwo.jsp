@@ -7,6 +7,7 @@
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Przekaż dar. Krok 2</title>
@@ -94,9 +95,9 @@
     </div>
 
     <div class="form--steps-container">
-        <div class="form--steps-counter">Krok <span>1</span>/5</div>
+        <div class="form--steps-counter">Krok <span>2</span>/5</div>
 
-        <form>
+        <form:form modelAttribute="stepTwo">
             <!-- STEP 2 -->
             <div data-step="2">
                 <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
@@ -104,7 +105,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <input type="number" name="bags" step="1" min="1" />
+                        <form:input type="number" path="bags" step="1" min="1" />
                     </label>
                 </div>
 
@@ -114,7 +115,7 @@
                 </div>
             </div>
 
-        </form>
+        </form:form>
     </div>
 </section>
 
