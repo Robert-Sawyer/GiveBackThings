@@ -7,6 +7,7 @@
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Przekaż dar. Krok 3</title>
@@ -94,21 +95,21 @@
     </div>
 
     <div class="form--steps-container">
-        <div class="form--steps-counter">Krok <span>1</span>/5</div>
+        <div class="form--steps-counter">Krok <span>3</span>/5</div>
 
-        <form>
+        <form:form modelAttribute="stepThree" method="post">
             <!-- STEP 3 -->
             <div data-step="3">
                 <h3>Lokalizacja:</h3>
 
                 <div class="form-group form-group--dropdown">
-                    <select name="localization">
+                    <form:select path="localization">
                         <option value="0">- wybierz -</option>
                         <option value="warsaw">Warszawa</option>
                         <option value="wroclaw">Wrocław</option>
                         <option value="poznan">Poznań</option>
                         <option value="gdansk">Gdańsk</option>
-                    </select>
+                    </form:select>
                 </div>
 
                 <div class="form-section">
@@ -116,14 +117,14 @@
                     <div class="form-section--checkboxes">
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <input type="checkbox" name="help[]" value="children" />
+                                <form:checkbox path="help[]" value="children" />
                                 <span class="checkbox">dzieciom</span>
                             </label>
                         </div>
 
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <input type="checkbox" name="help[]" value="mothers" />
+                                <form:checkbox path="help[]" value="mothers" />
                                 <span class="checkbox">samotnym matkom</span>
                             </label>
                         </div>
@@ -137,15 +138,29 @@
 
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <input type="checkbox" name="help[]" value="disabled" />
+                                <form:checkbox path="help[]" value="disabled" />
                                 <span class="checkbox">niepełnosprawnym</span>
                             </label>
                         </div>
 
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <input type="checkbox" name="help[]" value="old" />
+                                <form:checkbox path="help[]" value="old" />
                                 <span class="checkbox">osobom starszym</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--checkbox">
+                            <label>
+                                <form:checkbox path="help[]" value="unemployed" />
+                                <span class="checkbox">bezrobotnym</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--checkbox">
+                            <label>
+                                <form:checkbox path="help[]" value="animals" />
+                                <span class="checkbox">zwierzętom</span>
                             </label>
                         </div>
                     </div>
@@ -164,7 +179,7 @@
                 </div>
             </div>
 
-        </form>
+        </form:form>
     </div>
 </section>
 
