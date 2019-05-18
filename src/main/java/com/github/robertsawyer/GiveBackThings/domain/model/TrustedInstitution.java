@@ -22,4 +22,6 @@ public class TrustedInstitution {
     private String localization;
     @Column(nullable = false)
     private String purpose;
+    @Column(nullable = false)
+    private String description;
 }

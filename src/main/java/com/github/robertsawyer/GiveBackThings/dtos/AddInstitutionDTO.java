@@ -19,6 +19,8 @@ public class AddInstitutionDTO {
     private String localization;
     @NotNull
     private String purpose;
+    @NotNull
+    private String decscription;
 
 
 }
