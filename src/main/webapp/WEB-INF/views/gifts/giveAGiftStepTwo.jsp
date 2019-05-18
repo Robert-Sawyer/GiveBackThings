@@ -97,7 +97,7 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>2</span>/5</div>
 
-        <form:form modelAttribute="stepTwo">
+        <form:form modelAttribute="stepTwo" method="post">
             <!-- STEP 2 -->
             <div data-step="2">
                 <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
