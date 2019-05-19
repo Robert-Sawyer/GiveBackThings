@@ -7,6 +7,7 @@
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -99,18 +100,14 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/5</div>
 
-        <form>
+        <form:form method="post" modelAttribute="stepOne">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <input
-                                type="checkbox"
-                                name="products[]"
-                                value="clothes-to-use"
-                        />
+                        <form:checkbox path="products[]" value="clothes-to-use"/>
                         <span class="checkbox"></span>
                         <span class="description"
                         >ubrania, które nadają się do ponownego użycia</span
@@ -120,11 +117,7 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <input
-                                type="checkbox"
-                                name="products[]"
-                                value="clothes-useless"
-                        />
+                        <form:checkbox path="products[]" value="clothes-useless"/>
                         <span class="checkbox"></span>
                         <span class="description">ubrania, do wyrzucenia</span>
                     </label>
@@ -132,7 +125,7 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <input type="checkbox" name="products[]" value="toys" />
+                        <form:checkbox path="products[]" value="toys" />
                         <span class="checkbox"></span>
                         <span class="description">zabawki</span>
                     </label>
@@ -140,7 +133,7 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <input type="checkbox" name="products[]" value="books" />
+                        <form:checkbox path="products[]" value="books" />
                         <span class="checkbox"></span>
                         <span class="description">książki</span>
                     </label>
@@ -148,7 +141,7 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <input type="checkbox" name="products[]" value="other" />
+                        <form:checkbox path="products[]" value="other" />
                         <span class="checkbox"></span>
                         <span class="description">inne</span>
                     </label>
@@ -158,7 +151,7 @@
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
-        </form>
+        </form:form>
     </div>
 </section>
 

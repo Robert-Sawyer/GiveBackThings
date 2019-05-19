@@ -93,10 +93,11 @@
                             <td>${admin.login}</td>
                             <td>${admin.email}</td>
                             <td>
-                                <form method="get" action="/usersList">
+                                <form method="get" action="/editAdmin">
                                     <input type="submit" value="Edytuj dane admina">
                                 </form>
                             </td>
+
                             <td>
                                 <form:form modelAttribute="deleteAdmin" method="post">
                                     <input type="hidden" value="${admin

@@ -94,7 +94,6 @@
     </div>
 
     <div class="form--steps-container">
-        <div class="form--steps-counter">Krok <span>1</span>/5</div>
 
         <form>
             <!-- STEP 6 -->
