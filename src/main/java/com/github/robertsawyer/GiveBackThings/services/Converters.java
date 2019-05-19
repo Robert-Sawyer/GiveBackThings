@@ -3,12 +3,9 @@ package com.github.robertsawyer.GiveBackThings.services;
 import com.github.robertsawyer.GiveBackThings.domain.model.TrustedInstitution;
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.LocalizationDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Converters {
 

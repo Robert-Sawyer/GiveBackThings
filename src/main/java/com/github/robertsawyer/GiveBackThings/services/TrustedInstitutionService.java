@@ -4,7 +4,6 @@ import com.github.robertsawyer.GiveBackThings.domain.model.TrustedInstitution;
 import com.github.robertsawyer.GiveBackThings.domain.repositories.TrustedInstitutionsRepository;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.DeleteInstitutionDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.LocalizationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

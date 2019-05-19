@@ -20,6 +20,7 @@ public class AddInstitutionDTO {
     @NotNull
     private String purpose;
     @NotNull
+    @Size(min = 5, max = 600)
     private String decscription;
 
 

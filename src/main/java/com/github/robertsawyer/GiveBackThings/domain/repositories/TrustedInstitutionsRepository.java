@@ -2,7 +2,6 @@ package com.github.robertsawyer.GiveBackThings.domain.repositories;
 
 import com.github.robertsawyer.GiveBackThings.domain.model.TrustedInstitution;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.LocalizationDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
