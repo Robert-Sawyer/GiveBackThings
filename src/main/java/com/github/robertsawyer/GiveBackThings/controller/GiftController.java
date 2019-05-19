@@ -1,8 +1,6 @@
 package com.github.robertsawyer.GiveBackThings.controller;
 
-import com.github.robertsawyer.GiveBackThings.dtos.AddGiftStepOneDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.AddGiftStepThreeDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.AddGiftStepTwoDTO;
+import com.github.robertsawyer.GiveBackThings.dtos.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -68,11 +66,28 @@ public class GiftController {
         return "gifts/giveAGiftStepFour";
     }
 
+    @PostMapping("/gifts/add/stepFour")
+    public String goToStepFive(@Valid @ModelAttribute("stepFour") AddGiftStepFourDTO addGiftStepFourDTO, BindingResult result){
+        if (result.hasErrors()){
+            return "gifts/giveAGiftStepFour";
+        }
+
+        return "redirect:/gifts/add/stepFive";
+    }
 
     @GetMapping("/gifts/add/stepFive")
     public String showAddGiftFormStepFive(){
 
         return "gifts/giveAGiftStepFive";
+    }
+
+    @PostMapping("/gifts/add/stepFive")
+    public String goToStepSix(@Valid @ModelAttribute("stepFive") AddGiftStepFiveDTO addGiftStepFiveDTO, BindingResult result){
+        if (result.hasErrors()){
+            return "gifts/giveAGiftStepFive";
+        }
+
+        return "redirect:/gifts/add/stepSix";
     }
 
 
@@ -81,6 +96,7 @@ public class GiftController {
 
         return "gifts/giveAGiftStepSix";
     }
+
 
 
     @GetMapping("/gifts/add/stepSeven")
