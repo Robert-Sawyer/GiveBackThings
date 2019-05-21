@@ -61,8 +61,8 @@ public class GiftController {
     }
 
     @GetMapping("/gifts/add/stepFour")
-    public String showAddGiftFormStepFour(){
-
+    public String showAddGiftFormStepFour(Model model){
+        model.addAttribute("stepFour", new AddGiftStepFourDTO());
         return "gifts/giveAGiftStepFour";
     }
 
