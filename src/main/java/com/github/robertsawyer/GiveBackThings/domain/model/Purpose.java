@@ -6,12 +6,16 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "purposes")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Purpose {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;

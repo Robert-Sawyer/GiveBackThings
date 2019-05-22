@@ -27,7 +27,7 @@ public class Gift {
     private Long bags;
 
     @OneToMany
-    private Localization localization;
+    private List<Localization> localization;
 
     @OneToOne
     private Purpose purpose;
@@ -39,10 +39,10 @@ public class Gift {
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
-
-    private LocalDateTime created;
-
-    private BaseCalendar.Date date;
+//
+//    private LocalDateTime created;
+//
+//    private BaseCalendar.Date date;
 
 
 }

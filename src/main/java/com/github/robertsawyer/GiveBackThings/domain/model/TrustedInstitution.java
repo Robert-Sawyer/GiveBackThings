@@ -21,11 +21,9 @@ public class TrustedInstitution {
     private String name;
 
     @ManyToOne
-    @Column(nullable = false)
     private Localization localization;
 
     @ManyToOne
-    @Column(nullable = false)
     private Purpose purpose;
 
     @Column(nullable = false)
