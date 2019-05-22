@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "trusted_institutions")
@@ -25,10 +24,11 @@ public class TrustedInstitution {
     @Column(nullable = false)
     private Localization localization;
 
-    @OneToOne
+    @ManyToOne
     @Column(nullable = false)
     private Purpose purpose;
 
     @Column(nullable = false)
     private String description;
+
 }

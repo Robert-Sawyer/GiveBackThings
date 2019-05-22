@@ -1,5 +1,7 @@
 package com.github.robertsawyer.GiveBackThings.dtos;
 
+import com.github.robertsawyer.GiveBackThings.domain.model.Localization;
+import com.github.robertsawyer.GiveBackThings.domain.model.Purpose;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +18,9 @@ public class AddInstitutionDTO {
     @Size(min = 3)
     private String name;
     @NotNull
-    private String localization;
+    private Localization localization;
     @NotNull
-    private String purpose;
+    private Purpose purpose;
     @NotNull
     @Size(min = 5, max = 600)
     private String decscription;
