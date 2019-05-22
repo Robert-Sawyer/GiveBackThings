@@ -5,30 +5,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "trusted_institutions")
+@Table(name = "addresses")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TrustedInstitution {
+public class Addres {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String name;
-
-    @ManyToOne
-    @Column(nullable = false)
-    private Localization localization;
-
-    @OneToOne
-    @Column(nullable = false)
-    private Purpose purpose;
+    private String street;
 
     @Column(nullable = false)
-    private String description;
+    private String postCode;
+
+    @Column(nullable = false)
+    private String town;
+
+    @Column(nullable = false)
+    private String phoneNumber;
 }
