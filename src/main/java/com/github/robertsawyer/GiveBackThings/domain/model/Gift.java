@@ -26,8 +26,10 @@ public class Gift {
     @Column(nullable = false)
     private Long bags;
 
-//    private Localization localization;
+    @OneToMany
+    private Localization localization;
 
+    @OneToOne
     private Purpose purpose;
 
     @ManyToOne
@@ -35,7 +37,8 @@ public class Gift {
     private TrustedInstitution institution;
 
     @ManyToOne
-    private Addres address;
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     private LocalDateTime created;
 

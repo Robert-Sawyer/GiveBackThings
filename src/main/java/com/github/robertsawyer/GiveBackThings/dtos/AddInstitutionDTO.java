@@ -17,10 +17,13 @@ public class AddInstitutionDTO {
     @NotNull
     @Size(min = 3)
     private String name;
+
     @NotNull
     private Localization localization;
+
     @NotNull
     private Purpose purpose;
+
     @NotNull
     @Size(min = 5, max = 600)
     private String decscription;

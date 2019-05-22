@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Addres {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
