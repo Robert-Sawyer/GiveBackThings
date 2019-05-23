@@ -20,6 +20,9 @@ import java.security.Principal;
 @RequestMapping("/register")
 public class RegistrationController {
 
+    public RegistrationController() {
+    }
+
     @Autowired
     private UserService userService;
 
@@ -58,7 +61,7 @@ public class RegistrationController {
         return false;
     }
 
-    private boolean checkPasswordEquality(RegistrationFormDTO formDTO) {
+    protected boolean checkPasswordEquality(RegistrationFormDTO formDTO) {
         return formDTO.getPassword().equals(formDTO.getConfirmPassword());
     }
 }
