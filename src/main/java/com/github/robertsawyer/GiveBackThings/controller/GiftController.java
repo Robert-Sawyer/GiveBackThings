@@ -14,95 +14,22 @@ import javax.validation.Valid;
 public class GiftController {
 
 
-    @GetMapping("/gifts/add/stepOne")
-    public String showAddGiftFormStepOne(Model model){
-        model.addAttribute("stepOne", new AddGiftStepOneDTO());
-        return "gifts/giveAGiftStepOne";
+    @GetMapping("/gifts/add")
+    public String showAddGiftForm(Model model){
+        model.addAttribute("addGift", new AddGiftFormDTO());
+        return "gifts/giveAGiftForm";
     }
 
-    @PostMapping("/gifts/add/stepOne")
-    public String goToStepTwo(@Valid @ModelAttribute("stepOne") AddGiftStepOneDTO addGiftStepOneDTO, BindingResult result){
+    @PostMapping("/gifts/add")
+    public String giveAway(@Valid @ModelAttribute("addGift") AddGiftFormDTO addGiftFormDTO, BindingResult result){
         if (result.hasErrors()){
-            return "gifts/giveAGiftStepOne";
+            return "gifts/giveAGiftForm";
         }
 
-        return "redirect:/gifts/add/stepTwo";
-    }
-
-
-    @GetMapping("/gifts/add/stepTwo")
-    public String showAddGiftFormStepTwo(Model model){
-        model.addAttribute("stepTwo", new AddGiftStepTwoDTO());
-        return "gifts/giveAGiftStepTwo";
-    }
-
-    @PostMapping("/gifts/add/stepTwo")
-    public String goToStepThree(@Valid @ModelAttribute("stepTwo") AddGiftStepTwoDTO addGiftStepTwoDTO, BindingResult result){
-        if (result.hasErrors()){
-            return "gifts/giveAGiftStepTwo";
-        }
-
-        return "redirect:/gifts/add/stepThree";
-    }
-
-    @GetMapping("/gifts/add/stepThree")
-    public String showAddGiftFormStepThree(Model model){
-        model.addAttribute("stepThree", new AddGiftStepThreeDTO());
-        return "gifts/giveAGiftStepThree";
-    }
-
-    @PostMapping("/gifts/add/stepThree")
-    public String goToStepFour(@Valid @ModelAttribute("stepThree") AddGiftStepThreeDTO addGiftStepThreeDTO, BindingResult result){
-        if (result.hasErrors()){
-            return "gifts/giveAGiftStepThree";
-        }
-
-        return "redirect:/gifts/add/stepFour";
-    }
-
-    @GetMapping("/gifts/add/stepFour")
-    public String showAddGiftFormStepFour(Model model){
-        model.addAttribute("stepFour", new AddGiftStepFourDTO());
-        return "gifts/giveAGiftStepFour";
-    }
-
-    @PostMapping("/gifts/add/stepFour")
-    public String goToStepFive(@Valid @ModelAttribute("stepFour") AddGiftStepFourDTO addGiftStepFourDTO, BindingResult result){
-        if (result.hasErrors()){
-            return "gifts/giveAGiftStepFour";
-        }
-
-        return "redirect:/gifts/add/stepFive";
-    }
-
-    @GetMapping("/gifts/add/stepFive")
-    public String showAddGiftFormStepFive(){
-
-        return "gifts/giveAGiftStepFive";
-    }
-
-    @PostMapping("/gifts/add/stepFive")
-    public String goToStepSix(@Valid @ModelAttribute("stepFive") AddGiftStepFiveDTO addGiftStepFiveDTO, BindingResult result){
-        if (result.hasErrors()){
-            return "gifts/giveAGiftStepFive";
-        }
-
-        return "redirect:/gifts/add/stepSix";
-    }
-
-
-    @GetMapping("/gifts/add/stepSix")
-    public String showAddGiftFormStepSix(){
-
-        return "gifts/giveAGiftStepSix";
+        return "redirect:/gifts/done";
     }
 
 
 
-    @GetMapping("/gifts/add/stepSeven")
-    public String showAddGiftFormStepSeven(){
-
-        return "gifts/giveAGiftStepSeven";
-    }
 
 }
