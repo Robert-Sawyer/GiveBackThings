@@ -12,22 +12,23 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddGiftStepFiveDTO {
+public class AddAddressDTO {
 
     @NotNull
     private String street;
+
     @NotNull
-    private Integer houseNumber;
-    private Integer apartmentNumber;
-    @NotNull
-    private String city;
+    private String town;
+
     @NotNull
     private String postcode;
+
     @NotNull
-    private BaseCalendar.Date date;
-    private Time hour;
+    private String date;
+
     @NotNull
     private Long phoneNumber;
+
     private String note;
 
 }
