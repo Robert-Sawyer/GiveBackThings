@@ -22,6 +22,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/media/css/style.css">
 
+
 </head>
 <body>
 <header class="header--main-page">
@@ -69,7 +70,7 @@
     <div class="dashboard-header m-4">
         <div class="dashboard-menu">
             <div class="menu-item border-dashed">
-                <a href="/gifts/add/stepOne">
+                <a href="/gifts/add">
                     <i class="far fa-plus-square icon-plus-square"></i>
                     <span class="title">ODDAJ RZECZY</span>
                 </a>
@@ -119,6 +120,6 @@
     </div>
 </footer>
 
-<script src="/media/js/app.js"></script>
+<script src="${pageContext.request.contextPath}/media/js/app.js"></script>
 </body>
 </html>
