@@ -28,4 +28,8 @@ public class Address {
 
     @Column(nullable = false)
     private String phoneNumber;
+
+    private String date;
+
+    private String note;
 }
