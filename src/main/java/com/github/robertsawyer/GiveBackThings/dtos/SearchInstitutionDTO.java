@@ -1,5 +1,7 @@
 package com.github.robertsawyer.GiveBackThings.dtos;
 
+import com.github.robertsawyer.GiveBackThings.domain.model.Localization;
+import com.github.robertsawyer.GiveBackThings.domain.model.Purpose;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,11 +12,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddGiftStepThreeDTO {
+public class SearchInstitutionDTO {
 
     @NotNull
-    private String Localization;
+    private Localization Localization;
     @NotNull
-    private List<String> purpose;
+    private List<Purpose> purpose;
 
 }
