@@ -7,6 +7,7 @@ import sun.util.calendar.BaseCalendar;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Entity
@@ -26,12 +27,6 @@ public class Gift {
     @Column(nullable = false)
     private Long bags;
 
-    @OneToMany
-    private List<Localization> localization;
-
-    @OneToOne
-    private Purpose purpose;
-
     @ManyToOne
     @JoinColumn(name = "institution_id")
     private TrustedInstitution institution;
@@ -39,10 +34,18 @@ public class Gift {
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
-//
-//    private LocalDateTime created;
-//
-//    private BaseCalendar.Date date;
+
+    @Column(nullable = false)
+    private String created;
+
+
+    @PrePersist
+    public void dateCreated() {
+        LocalDateTime time = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String createdDate = time.format(dateTimeFormatter);
+        this.created = createdDate;
+    }
 
 
 }
