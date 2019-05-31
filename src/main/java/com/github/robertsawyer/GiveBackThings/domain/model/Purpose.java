@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "purposes")
@@ -19,5 +20,8 @@ public class Purpose {
     private Long id;
 
     private String name;
+
+    @OneToMany
+    private List<Institution> institutions;
 
 }
