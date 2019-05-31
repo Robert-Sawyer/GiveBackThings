@@ -36,8 +36,8 @@ public class InstitutionController {
     @GetMapping("/institution/add")
     public String showAddInstitutionForm(Model model){
         model.addAttribute("newInstitution", new AddInstitutionDTO());
-        model.addAttribute("localizations", institutionService.getLocalization());
-        model.addAttribute("purposes", institutionService.getAllPurposes());
+        model.addAttribute("locations", institutionService.getLocalization());
+        model.addAttribute("purposes", institutionService.getPurposes());
         return "institutions/addNewInstitution";
     }
 

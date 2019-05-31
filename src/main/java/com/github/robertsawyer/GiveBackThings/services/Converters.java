@@ -30,8 +30,8 @@ public class Converters {
     public static Institution convertToTrustedInstitution(AddInstitutionDTO newInstitution) {
         Institution institution = new Institution();
         institution.setName(newInstitution.getName());
-        institution.setLocation(newInstitution.getLocation());
-        institution.setPurpose(newInstitution.getPurpose());
+//        institution.setLocation(newInstitution.getLocationId());
+//        institution.setPurpose(newInstitution.getPurposeId());
         return null;
     }
 

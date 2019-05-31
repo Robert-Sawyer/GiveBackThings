@@ -3,7 +3,6 @@ package com.github.robertsawyer.GiveBackThings.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sun.util.calendar.BaseCalendar;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -29,7 +28,7 @@ public class Gift {
 
     @ManyToOne
     @JoinColumn(name = "institution_id")
-    private TrustedInstitution institution;
+    private Institution institution;
 
     @ManyToOne
     @JoinColumn(name = "address_id")
