@@ -1,21 +1,21 @@
 package com.github.robertsawyer.GiveBackThings.domain.repositories;
 
-import com.github.robertsawyer.GiveBackThings.domain.model.TrustedInstitution;
+import com.github.robertsawyer.GiveBackThings.domain.model.Institution;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface TrustedInstitutionsRepository extends JpaRepository<TrustedInstitution, Long> {
+public interface InstitutionRepository extends JpaRepository<Institution, Long> {
 
-    @Query(value = "SELECT * FROM trusted_institutions",
+    @Query(value = "SELECT * FROM institutions",
     nativeQuery = true)
-    List<TrustedInstitution> findAllTrustedInstitutions();
+    List<Institution> findAllInstitutions();
 
-    @Query(value = "SELECT name FROM localizations",
+    @Query(value = "SELECT name FROM locations",
     nativeQuery = true)
-    List<AddInstitutionDTO> findAllLocalizations();
+    List<AddInstitutionDTO> findAllLocations();
 
     @Query(value = "SELECT name FROM purposes",
     nativeQuery = true)
