@@ -13,7 +13,7 @@ import java.util.Objects;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Localization {
+public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,13 +22,13 @@ public class Localization {
     private String name;
 
     @OneToMany
-    private List<TrustedInstitution> institutions;
+    private List<Institution> institutions;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Localization that = (Localization) o;
+        Location that = (Location) o;
         return Objects.equals(id, that.id);
     }
 

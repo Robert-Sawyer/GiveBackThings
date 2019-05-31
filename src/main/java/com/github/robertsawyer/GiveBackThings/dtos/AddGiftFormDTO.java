@@ -2,7 +2,7 @@ package com.github.robertsawyer.GiveBackThings.dtos;
 
 import com.github.robertsawyer.GiveBackThings.domain.model.Address;
 import com.github.robertsawyer.GiveBackThings.domain.model.Category;
-import com.github.robertsawyer.GiveBackThings.domain.model.TrustedInstitution;
+import com.github.robertsawyer.GiveBackThings.domain.model.Institution;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,7 @@ public class AddGiftFormDTO {
     private Integer bags;
 
     @NotNull
-    private TrustedInstitution institution;
+    private Institution institution;
 
     @NotNull
     private Address address;

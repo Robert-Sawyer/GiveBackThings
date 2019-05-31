@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "trusted_institutions")
+@Table(name = "institutions")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TrustedInstitution {
+public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,11 @@ public class TrustedInstitution {
     private String name;
 
     @ManyToOne
-    private Localization localization;
+    @JoinColumn(name = "location_id")
+    private Location location;
 
     @ManyToOne
+    @JoinColumn(name = "purpose_id")
     private Purpose purpose;
 
     @Column(nullable = false)

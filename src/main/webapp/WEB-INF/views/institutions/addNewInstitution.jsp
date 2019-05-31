@@ -60,7 +60,7 @@
     <a href='<c:url value="/adminDashboard" />'>Kokpit</a>
     <a href='<c:url value="/adminsList" />'>Administratorzy</a>
     <a href='<c:url value="/usersList" />'>Użytkownicy</a>
-    <a href='<c:url value="/trustedInstitutions" />'>Zaufane instytucje</a>
+    <a href='<c:url value="/institutions" />'>Zaufane instytucje</a>
     <a href='<c:url value="/listOfMyGifts" />'>Moje dary</a>
     <a href='<c:url value="/listOfMyCollections" />'>Moje zbiórki</a>
     <a href="#">Edytuj dane</a>

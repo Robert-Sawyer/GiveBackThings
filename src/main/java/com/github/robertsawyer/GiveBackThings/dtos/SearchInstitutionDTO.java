@@ -1,6 +1,6 @@
 package com.github.robertsawyer.GiveBackThings.dtos;
 
-import com.github.robertsawyer.GiveBackThings.domain.model.Localization;
+import com.github.robertsawyer.GiveBackThings.domain.model.Location;
 import com.github.robertsawyer.GiveBackThings.domain.model.Purpose;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ import java.util.List;
 public class SearchInstitutionDTO {
 
     @NotNull
-    private Localization Localization;
+    private Location Location;
     @NotNull
     private List<Purpose> purpose;
 

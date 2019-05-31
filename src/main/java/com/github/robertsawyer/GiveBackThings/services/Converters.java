@@ -1,6 +1,6 @@
 package com.github.robertsawyer.GiveBackThings.services;
 
-import com.github.robertsawyer.GiveBackThings.domain.model.TrustedInstitution;
+import com.github.robertsawyer.GiveBackThings.domain.model.Institution;
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
@@ -27,11 +27,11 @@ public class Converters {
     }
 
 
-    public static TrustedInstitution convertToTrustedInstitution(AddInstitutionDTO newInstitution) {
-        TrustedInstitution trustedInstitution = new TrustedInstitution();
-        trustedInstitution.setName(newInstitution.getName());
-        trustedInstitution.setLocalization(newInstitution.getLocalization());
-        trustedInstitution.setPurpose(newInstitution.getPurpose());
+    public static Institution convertToTrustedInstitution(AddInstitutionDTO newInstitution) {
+        Institution institution = new Institution();
+        institution.setName(newInstitution.getName());
+        institution.setLocation(newInstitution.getLocation());
+        institution.setPurpose(newInstitution.getPurpose());
         return null;
     }
 
