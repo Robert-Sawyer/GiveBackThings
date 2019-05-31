@@ -19,10 +19,12 @@ public class AddInstitutionDTO {
     private String name;
 
     @NotNull
-    private Location location;
+    private Long locationId;
 
     @NotNull
-    private Purpose purpose;
+    private Long purposeId;
+
+    private Long institutionId;
 
     @NotNull
     @Size(min = 5, max = 600)
