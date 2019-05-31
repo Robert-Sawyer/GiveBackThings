@@ -74,19 +74,35 @@
     <div class="formContainer">
         <form:form method="post" modelAttribute="newInstitution">
             <form:errors path="*"/><br>
-            Nazwa instytucji: <form:input path="name"/><br>
+            <div>Nazwa instytucji:
+                <form:input path="name"/>
+            </div>
+
+            <div>
             Lokalizacja:
-            <select name="loc">
-                <c:forEach items="${localizations}" var="loc">
-                    <option>${loc.localization}</option>
+            <select name="locationId">
+                <c:forEach items="${locations}" var="loc">
+                    <option value="${loc.id}">${loc.name}</option>
                 </c:forEach>
-            </select><br>
+                <input type="hidden" name="institutionId"/>
+            </select>
+            </div>
+
+            <div>
             Cel działalności:
-            <select name="purpose">
+            <select name="purposeId">
                 <c:forEach items="${purposes}" var="purpose">
-                    <option>${purpose.purpose}</option>
+                    <option value="${purpose.id}">${purpose.name}</option>
                 </c:forEach>
-            </select><br>
+                <input type="hidden" name="institutionId"/>
+            </select>
+            </div>
+
+            <div>
+            Opis:
+            <textarea name="description"></textarea>
+            </div>
+
             <input type="submit" value="Dodaj">
 
         </form:form>
