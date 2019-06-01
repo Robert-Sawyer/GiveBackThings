@@ -27,7 +27,7 @@ public class InstitutionController {
         return "institutions/institutionsList";
     }
 
-    @PostMapping(value = "/intitutions", params = "delete")
+    @PostMapping(value = "/institutions", params = "delete")
     public String deleteInstitution(@ModelAttribute("deleteIntitution") DeleteInstitutionDTO deleteInstitutionDTO){
         institutionService.deleteInstitution(deleteInstitutionDTO);
         return "redirect:/institutions";
