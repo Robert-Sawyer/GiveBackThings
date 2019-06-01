@@ -21,11 +21,9 @@ public class Institution {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "location_id")
     private Location location;
 
     @ManyToOne
-    @JoinColumn(name = "purpose_id")
     private Purpose purpose;
 
     @Column(nullable = false)
