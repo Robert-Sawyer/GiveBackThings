@@ -83,8 +83,9 @@
                     <table style="color: black;">
                         <tr>
                             <td>${inst.name}</td>
-                            <td>${inst.localization}</td>
-                            <td>${inst.purpose}</td>
+                            <td>${inst.location.name}</td>
+                            <td>${inst.purpose.name}</td>
+                            <td>${inst.description}</td>
                             <td>
                                 <form method="get" action="/usersList">
                                     <input type="submit" value="Edytuj dane instytucji">
