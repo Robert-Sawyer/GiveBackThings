@@ -54,7 +54,9 @@ public class InstitutionService {
 
     @Transactional
     public void createNewInstitution(AddInstitutionDTO newInstitution) {
-        Institution institution = Converters.convertToTrustedInstitution(newInstitution);
+        Location location = locationRepository.findById(newInstitution.getLocationId());
+        Purpose purpose = purposeRepository.findById(newInstitution.getPurposeId());
+        Institution institution = Converters.convertToTrustedInstitution(newInstitution, purpose, location);
         institutionRepository.save(institution);
     }
 }
