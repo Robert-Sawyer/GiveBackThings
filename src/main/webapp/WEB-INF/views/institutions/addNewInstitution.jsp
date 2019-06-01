@@ -84,7 +84,6 @@
                 <c:forEach items="${locations}" var="loc">
                     <option value="${loc.id}">${loc.name}</option>
                 </c:forEach>
-                <input type="hidden" name="institutionId"/>
             </select>
             </div>
 
@@ -94,13 +93,12 @@
                 <c:forEach items="${purposes}" var="purpose">
                     <option value="${purpose.id}">${purpose.name}</option>
                 </c:forEach>
-                <input type="hidden" name="institutionId"/>
             </select>
             </div>
 
             <div>
             Opis:
-            <textarea name="description"></textarea>
+            <form:textarea path="decscription"></form:textarea>
             </div>
 
             <input type="submit" value="Dodaj">
