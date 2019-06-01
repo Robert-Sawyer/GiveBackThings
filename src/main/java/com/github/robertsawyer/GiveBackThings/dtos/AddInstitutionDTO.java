@@ -24,8 +24,6 @@ public class AddInstitutionDTO {
     @NotNull
     private Long purposeId;
 
-    private Long institutionId;
-
     @NotNull
     @Size(min = 5, max = 600)
     private String decscription;
