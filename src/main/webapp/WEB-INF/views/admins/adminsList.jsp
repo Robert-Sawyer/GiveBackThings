@@ -78,9 +78,7 @@
         </form>
     </div>
     <div class="makeNewAdmin">
-        <form method="get" action="/usersList">
-            <p>Mianuj nowego admina<input type="submit" value="Wybierz"></p>
-        </form>
+            <p>Mianuj nowego admina<a href="/usersList"><input type="submit" value="Wybierz"></a></p>
     </div>
     <div class="adminsList">
         <ul>
