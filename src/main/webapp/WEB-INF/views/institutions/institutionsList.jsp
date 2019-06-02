@@ -59,8 +59,8 @@
 
 <div class="sidenav">
     <a href='<c:url value="/adminDashboard" />'>Kokpit</a>
-    <a href='<c:url value="/adminList" />'>Administratorzy</a>
-    <a href='<c:url value="/userList" />'>Użytkownicy</a>
+    <a href='<c:url value="/adminsList" />'>Administratorzy</a>
+    <a href='<c:url value="/usersList" />'>Użytkownicy</a>
     <a href='<c:url value="/institutions" />'>Zaufane instytucje</a>
     <a href="#">Edytuj dane</a>
     <a href='<c:url value="/logout"/>'>Wyloguj</a>

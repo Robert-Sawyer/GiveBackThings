@@ -58,8 +58,8 @@
 
 <div class="sidenav">
     <a href='<c:url value="/adminDashboard" />'>Kokpit</a>
-    <a href='<c:url value="/adminList" />'>Administratorzy</a>
-    <a href='<c:url value="/userList" />'>Użytkownicy</a>
+    <a href='<c:url value="/adminsList" />'>Administratorzy</a>
+    <a href='<c:url value="/usersList" />'>Użytkownicy</a>
     <a href='<c:url value="/institutions" />'>Zaufane instytucje</a>
     <a href="#">Edytuj dane</a>
     <a href='<c:url value="/logout"/>'>Wyloguj</a>
@@ -73,7 +73,7 @@
 
     <div class="addAdminForm">
         <form method="get" action="/places/add">
-            <p style="color: white; font-size: 22px;">Dodaj/mianuj nowego administratora: <input type="submit" value="Dodaj"></p>
+            <p style="color:black; font-size: 22px;">Dodaj nowego administratora: <input type="submit" value="Dodaj"></p>
         </form>
     </div>
     <div class="adminsList">
@@ -87,39 +87,27 @@
                             <td>${user.login}</td>
                             <td>${user.email}</td>
                             <td>
-                                <form method="get" action="/usersList">
-                                    <input type="submit" value="Mianuj admina">
-                                </form>
+                                <form:form modelAttribute="entitleAdmin" method="post">
+                                    <input type="hidden" value="${user.id}" name="userId">
+                                    <input type="submit" value="Mianuj admina" name="entitle">
+                                </form:form>
                             </td>
                             <td>
                                 <form method="get" action="/usersList">
                                     <input type="submit" value="Edytuj dane usera">
                                 </form>
                             </td>
-                            <td>
-                                <form:form modelAttribute="banUser" method="post">
-                                    <input type="submit" value="Zablokuj użytkownika">
-                                </form:form>
-                            </td>
+<%--                            <td>--%>
+<%--                                <form:form modelAttribute="banUser" method="post">--%>
+<%--                                    <input type="submit" value="Zablokuj użytkownika">--%>
+<%--                                </form:form>--%>
+<%--                            </td>--%>
                             <td>
                                 <form:form modelAttribute="deleteUser" method="post">
                                     <input type="hidden" value="${user.id}" name="userId">
                                     <input type="submit" value="Usuń użytkownika" name="delete">
                                 </form:form>
                             </td>
-<%--                            <td>--%>
-<%--                                <form:form modelAttribute="addPlaceToPlan" method="post">--%>
-<%--                                    <select name="planId">--%>
-<%--                                        <c:forEach items="${plans}" var="plan">--%>
-<%--                                            <c:if test="${!plan.places.contains(place)}">--%>
-<%--                                                <option value="${plan.id}">${plan.name}</option>--%>
-<%--                                            </c:if>--%>
-<%--                                        </c:forEach>--%>
-<%--                                        <input type="hidden" value="${place.id}" name="placeId"/>--%>
-<%--                                        <input type="submit" value="Usuń admina" name="addToPlan"/>--%>
-<%--                                    </select>--%>
-<%--                                </form:form>--%>
-<%--                            </td>--%>
                         </tr>
                     </table>
                 </li>
