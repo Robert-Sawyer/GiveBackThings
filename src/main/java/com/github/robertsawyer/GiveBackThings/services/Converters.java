@@ -5,6 +5,7 @@ import com.github.robertsawyer.GiveBackThings.domain.model.Location;
 import com.github.robertsawyer.GiveBackThings.domain.model.Purpose;
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
+import com.github.robertsawyer.GiveBackThings.dtos.EntitleAdminDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 

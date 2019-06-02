@@ -3,6 +3,7 @@ package com.github.robertsawyer.GiveBackThings.domain.repositories;
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.dtos.LoginFormDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -21,4 +22,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT * FROM users WHERE role = 'USER'",
     nativeQuery = true)
     List<User> findAllUsers();
+
+    @Modifying
+    @Query(value = "UPDATE users SET role = 'ADMIN' where id = ?",
+    nativeQuery = true)
+    void changeRoleToAdmin(Long userId);
 }

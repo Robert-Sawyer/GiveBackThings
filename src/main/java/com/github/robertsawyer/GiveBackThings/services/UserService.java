@@ -2,10 +2,7 @@ package com.github.robertsawyer.GiveBackThings.services;
 
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.domain.repositories.UserRepository;
-import com.github.robertsawyer.GiveBackThings.dtos.DeleteUserDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.LoginFormDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
+import com.github.robertsawyer.GiveBackThings.dtos.*;
 import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -89,5 +86,11 @@ public class UserService {
 
     public void deleteUser(DeleteUserDTO deleteUserDTO) {
         userRepository.delete(deleteUserDTO.getUserId());
+    }
+
+    @Transactional
+    public void entitleAdmin(EntitleAdminDTO entitleAdmin) {
+        Long userId = entitleAdmin.getUserId();
+        userRepository.changeRoleToAdmin(userId);
     }
 }
