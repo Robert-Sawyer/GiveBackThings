@@ -8,6 +8,7 @@
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8"/>
@@ -167,70 +168,27 @@
 
             <%--            --- STEP 3 -----%>
 
-            <form:form method="post" modelAttribute="address">
+            <form:form method="post" modelAttribute="findProperInstitution">
                 <div data-step="3">
                     <h3>Lokalizacja:</h3>
 
                     <div class="form-group form-group--dropdown">
-                        <form:select path="localization">
-                            <option value="0">- wybierz -</option>
-                            <option value="warsaw">Warszawa</option>
-                            <option value="wroclaw">Wrocław</option>
-                            <option value="poznan">Poznań</option>
-                            <option value="gdansk">Gdańsk</option>
-                        </form:select>
+                        <select name="locationId">
+                            <c:forEach items="${locations}" var="loc">
+                                <option value="${loc.id}">${loc.name}</option>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div class="form-section">
                         <h4>Komu chcesz pomóc?</h4>
                         <div class="form-section--checkboxes">
-                            <div class="form-group form-group--checkbox">
+                            <div>
+                                <c:forEach items="${purposes}" var="purpose">
                                 <label>
-                                    <form:checkbox path="help[]" value="children"/>
-                                    <span class="checkbox">dzieciom</span>
+                                    <input type="checkbox" name="purposeId" value="${purpose.id}">${purpose.name}
                                 </label>
-                            </div>
-
-                            <div class="form-group form-group--checkbox">
-                                <label>
-                                    <form:checkbox path="help[]" value="mothers"/>
-                                    <span class="checkbox">samotnym matkom</span>
-                                </label>
-                            </div>
-
-                            <div class="form-group form-group--checkbox">
-                                <label>
-                                    <input type="checkbox" name="help[]" value="homeless"/>
-                                    <span class="checkbox">bezdomnym</span>
-                                </label>
-                            </div>
-
-                            <div class="form-group form-group--checkbox">
-                                <label>
-                                    <form:checkbox path="help[]" value="disabled"/>
-                                    <span class="checkbox">niepełnosprawnym</span>
-                                </label>
-                            </div>
-
-                            <div class="form-group form-group--checkbox">
-                                <label>
-                                    <form:checkbox path="help[]" value="old"/>
-                                    <span class="checkbox">osobom starszym</span>
-                                </label>
-                            </div>
-
-                            <div class="form-group form-group--checkbox">
-                                <label>
-                                    <form:checkbox path="help[]" value="unemployed"/>
-                                    <span class="checkbox">bezrobotnym</span>
-                                </label>
-                            </div>
-
-                            <div class="form-group form-group--checkbox">
-                                <label>
-                                    <form:checkbox path="help[]" value="animals"/>
-                                    <span class="checkbox">zwierzętom</span>
-                                </label>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -254,35 +212,19 @@
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
 
                 <c:forEach items="${institutions}" var="inst">
-
-                    <div class="form-group form-group--checkbox">
-                        <label>
-                            <input type="radio" name="organization" value="old"/>
-                            <span class="checkbox radio"></span>
-                            <span class="description">
-
-                  <div class="title">${inst.name}</div>
-                  <div class="subtitle">
-                          ${inst.description}
-                  </div>
-                </span>
-                        </label>
-                    </div>
-                </c:forEach>
-
                 <div class="form-group form-group--checkbox">
                     <label>
                         <input type="radio" name="organization" value="old"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                  <div class="title">Fundacja “Dla dzieci"</div>
+                  <div class="title">Fundacja ${inst.name}</div>
                   <div class="subtitle">
-                    Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji
-                    życiowej.
+                    Cel i misja: ${inst.description}
                   </div>
                 </span>
                     </label>
                 </div>
+                </c:forEach>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
