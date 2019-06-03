@@ -1,6 +1,7 @@
 package com.github.robertsawyer.GiveBackThings.controller;
 
 import com.github.robertsawyer.GiveBackThings.dtos.*;
+import com.github.robertsawyer.GiveBackThings.services.InstitutionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,10 +14,19 @@ import javax.validation.Valid;
 @Controller
 public class GiftController {
 
+    private InstitutionService institutionService;
+
+    public GiftController(InstitutionService institutionService) {
+        this.institutionService = institutionService;
+    }
 
     @GetMapping("/gifts/add")
     public String showAddGiftForm(Model model){
         model.addAttribute("addGift", new AddGiftFormDTO());
+        model.addAttribute("findProperInstitution", new SearchInstitutionDTO());
+        model.addAttribute("locations", institutionService.getLocalization());
+        model.addAttribute("purposes", institutionService.getPurposes());
+        model.addAttribute("institutions", institutionService.getAllInstitutions());
         return "gifts/giveAGiftForm";
     }
 
