@@ -3,10 +3,10 @@ package com.github.robertsawyer.GiveBackThings.domain.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -21,10 +21,7 @@ public class User {
     private Long id;
     @Column(unique = true, nullable = false)
     private String login;
-    @Column
-    private String firstName;
-    @Column
-    private String lastName;
+    @Email
     @Column(unique = true, nullable = false)
     private String email;
     @Column(nullable = false)
@@ -32,6 +29,12 @@ public class User {
 
     @Column
     private String role;
+
+    @OneToOne
+    private UserDetails details;
+
+    @OneToMany
+    private List<Gift> gifts;
 
     @Override
     public boolean equals(Object o) {
