@@ -40,12 +40,6 @@
     <form:form modelAttribute="registrationForm" method="post">
         <form:errors path="*"/><br>
         <div class="form-group">
-            <form:input path="firstName" placeholder="Imię" />
-        </div>
-        <div class="form-group">
-            <form:input path="lastName" placeholder="Nazwisko" />
-        </div>
-        <div class="form-group">
             <form:input path="login" placeholder="Login" />
         </div>
         <div class="form-group">

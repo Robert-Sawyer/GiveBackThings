@@ -16,12 +16,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class RegistrationFormDTO {
 
-    @NotNull
-    @Size(min = 2, max = 30)
-    private String firstName;
-    @NotNull
-    @Size(min = 2, max = 30)
-    private String lastName;
+
     @NotNull
     @Size(min = 3, max = 20)
     private String login;

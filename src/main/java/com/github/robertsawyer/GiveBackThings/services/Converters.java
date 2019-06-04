@@ -5,7 +5,6 @@ import com.github.robertsawyer.GiveBackThings.domain.model.Location;
 import com.github.robertsawyer.GiveBackThings.domain.model.Purpose;
 import com.github.robertsawyer.GiveBackThings.domain.model.User;
 import com.github.robertsawyer.GiveBackThings.dtos.AddInstitutionDTO;
-import com.github.robertsawyer.GiveBackThings.dtos.EntitleAdminDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.RegistrationFormDTO;
 import com.github.robertsawyer.GiveBackThings.dtos.UserDTO;
 
@@ -23,8 +22,6 @@ public class Converters {
         user.setLogin(formDTO.getLogin());
         user.setEmail(formDTO.getEmail());
         user.setPassword(formDTO.getPassword());
-        user.setFirstName(formDTO.getFirstName());
-        user.setLastName(formDTO.getLastName());
         user.setRole("USER");
         return user;
     }
