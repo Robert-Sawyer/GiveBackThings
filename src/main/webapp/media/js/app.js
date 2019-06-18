@@ -252,4 +252,29 @@ document.addEventListener("DOMContentLoaded", function() {
   if (form !== null) {
     new FormSteps(form);
   }
+
+  const urlInst = "http://localhost:8090/institutions";
+  const $div = $('#result');
+
+  $('.ajax').on('click', function () {
+    const $btn = $(this);
+
+    $.ajax({
+      url : urlInst,
+      dataType : 'json'
+    })
+        .done((res) => {
+          $div.empty();
+
+          res.forEach(el => {
+            $div.append(`<div class="title">Fundacja ${inst.name}</div>
+                  <div class="subtitle">
+                    Cel i misja: ${inst.description}
+                  </div>`);
+          })
+        })
+        .fail(() => {
+          alert("Wystąpił błąd w połączeniu");
+        })
+  })
 });
