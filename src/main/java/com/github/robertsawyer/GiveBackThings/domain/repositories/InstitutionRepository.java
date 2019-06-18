@@ -20,4 +20,8 @@ public interface InstitutionRepository extends JpaRepository<Institution, Long> 
     @Query(value = "SELECT name FROM purposes",
     nativeQuery = true)
     List<AddInstitutionDTO> findAllPurposes();
+
+    @Query(value = "SELECT * FROM institutions WHERE location_id = ? AND purpose_id = ?",
+    nativeQuery = true)
+    List<Institution> findProperInstitution(Long locationId, Long purposeId);
 }
