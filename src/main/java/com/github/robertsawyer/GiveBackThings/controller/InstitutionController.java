@@ -49,5 +49,4 @@ public class InstitutionController {
         institutionService.createNewInstitution(newInstitution);
         return "redirect:/institutions";
     }
-    
 }
